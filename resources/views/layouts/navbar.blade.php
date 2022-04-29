@@ -82,20 +82,13 @@
                     </a>
                     {{-- <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('dashboard/assets/images/users/1.jpg') }}" alt="user" class="rounded-circle" width="31"></a> --}}
                     <div class="dropdown-menu dropdown-menu-right user-dd animated">
-                        <a class="dropdown-item" href="/logout"><i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
-                        <a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet m-r-5 m-l-5"></i> My Balance</a>
-                        <a class="dropdown-item" href="javascript:void(0)"><i class="ti-email m-r-5 m-l-5"></i> Inbox</a>
+                        <a class="dropdown-item" href="#"><i class="ti-user m-r-5 m-l-5"></i> Profil</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="javascript:void(0)"><i class="ti-settings m-r-5 m-l-5"></i> Account Setting</a>
+                        <a class="dropdown-item" href="#"><i class="ti-settings m-r-5 m-l-5"></i> Account Setting</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#"><i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
-                        <div class="dropdown-divider"></div>
-                        <div class="p-l-30 p-10"><a href="#" class="btn btn-sm btn-success btn-rounded">Lihat</a></div>
+                        <a class="dropdown-item" href="/logout"><i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
                     </div>
                 </li>
-                <!-- ============================================================== -->
-                <!-- User profile and search -->
-                <!-- ============================================================== -->
             </ul>
         </div>
     </nav>
