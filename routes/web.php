@@ -30,7 +30,10 @@ Route::group(['middleware' => ['auth', 'CheckRole:admin']], function(){
     Route::post('/siswa/{id}/update', 'SiswaController@update');
     // Route::get('/siswa/{id}/delete', 'SiswaController@delete');
     Route::delete('/siswa/delete/{id}', 'SiswaController@delete')->name('siswa.delete');
-
+    
+    //input nilai
+    Route::get('/nilai', 'InputnilaiController@index');
+    Route::get('/nilai/{id}/input', 'InputnilaiController@input');
 });
 
 Route::group(['middleware' => ['auth', 'CheckRole:admin,siswa']], function(){
