@@ -20,47 +20,118 @@
             <div class="container-fluid">
                 <div class="row">
                     <!-- column -->
-                    <div class="col-lg-4">
+                    <div class="col-lg-12">
                         <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Profil Siswa</h4>
-                                <div class="col-md-6 col-lg-12">
-                                    <div class="card card-hover">
-                                        <div class="box bg-cyan text-center">
-                                            {{-- <h1 class="font-light text-white"><i class="mdi mdi-view-dashboard"></i></h1> --}}
-                                            <div class="p-2"><img src="{{ asset('dashboard/assets/images/users/1.jpg') }}" alt="user" width="100" class="rounded-circle"></div> 
-                                            <h6 class="text-white">Dashboard</h6>
-                                        </div>
-                                    </div>
+                            <div class="card card">
+                                <div class="box bg-cyan text-center">
+                                    <h4 class="text-white text-left">Show Nilai</h4>
                                 </div>
                             </div>
-                            <div class="comment-widgets scrollable">
-                                <!-- Comment Row -->
-                                <div class="d-flex flex-row comment m-t-0">
-                                    {{-- <div class="p-2"><img src="{{ asset('dashboard/assets/images/users/1.jpg') }}" alt="user" width="50" class="rounded-circle"></div> --}}
-                                    <div class="comment-text w-100">
-                                        <h6 class="font-medium">James Anderson</h6>
-                                        <span class="m-b-15 d-block">Lorem Ipsum is simply dummy text of the printing and type setting industry. </span>
-                                        <div class="comment-footer">
-                                            {{-- <span class="text-muted float-right">April 14, 2016</span>  --}}
-                                            <button type="button" class="btn btn-cyan btn-sm">Edit</button>
-                                            <button type="button" class="btn btn-success btn-sm">Publish</button>
-                                            <button type="button" class="btn btn-danger btn-sm">Delete</button>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Data Diri Siswa</h5>
+                                <table class="table">
+                                    {{-- <thead>
+                                      <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">First</th>
+                                        <th scope="col">Last</th>
+                                        <th scope="col">Handle</th>
+                                      </tr>
+                                    </thead> --}}
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row">Nama</th>
+                                        <td></td>
+                                        <td>:</td>
+                                        <td>{{$siswa->nama}}</td>
+                                        <td></td>
+                                        <td></td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">Jenis Kelamin</th>
+                                        <td></td>
+                                        <td>:</td>
+                                        <td>{{$siswa->jenis_kelamin}}</td>
+                                        <td></td>
+                                        <td></td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">Agama</th>
+                                        <td></td>
+                                        <td>:</td>
+                                        <td>{{$siswa->agama}}</td>
+                                        <td></td>
+                                        <td></td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">Alamat</th>
+                                        <td></td>
+                                        <td>:</td>
+                                        <td>{{$siswa->alamat}}</td>
+                                        <td></td>
+                                        <td></td>
+                                      </tr>
+                                      <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                      </tr>
+                                    </tbody>
+                              </table>
+                              <div class="card-body text-right">
+                                <button type="button" class="btn btn-warning margin-5 text-white" data-toggle="modal" data-target="#Modal2">
+                                    Alert
+                                </button>
+                              </div>
+                              <!-- Button trigger modal -->
+                                {{-- <button type="button" class="btn btn-warning margin-5 text-white" data-toggle="modal" data-target="#Modal2">
+                                    Alert
+                                </button> --}}
+                              <table class="table table-bordered">
+                                <thead class="thead-dark">
+                                  <tr>
+                                    <th scope="col">Kode</th>
+                                    <th scope="col">Nama</th>
+                                    <th scope="col">Semester</th>
+                                    <th scope="col">Nilai</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                @foreach ($siswa->mapel as $mapel)
+                                  <tr>
+                                    <th scope="row">{{$mapel->kode}}</th>
+                                    <td>{{$mapel->nama}}</td>
+                                    <td>{{$mapel->semester}}</td>
+                                    <td>{{$mapel->pivot->nilai}}</td>
+                                  </tr>
+                                @endforeach
+                                </tbody>
+                              </table>
                             </div>
                         </div>
-                        
                     </div>
-                    <!-- column -->
+                </div>
+            </div>
 
-                    <div class="col-lg-8">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">One third width</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
-                            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="Modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Alert Model</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Lorem ipsum dolor sit amet...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
                         </div>
                     </div>
                 </div>
